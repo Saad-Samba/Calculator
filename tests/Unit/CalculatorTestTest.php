@@ -47,6 +47,15 @@ class CalculatorTestTest extends TestCase
     /**
      * @test
      */
+    public function it_returns_a_fraction()
+    {
+        $result = Calculator::divide(1, 2);
+        $this->assertEquals($result, 0.5);
+    }
+
+    /**
+     * @test
+     */
     public function it_throws_error_division_by_zero()
     {
         $this->expectException(\DivisionByZeroError::class);
