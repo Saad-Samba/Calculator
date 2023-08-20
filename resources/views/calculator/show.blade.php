@@ -20,15 +20,22 @@
             @csrf
 
             <div class="lg:py-3 lg:px-20 ">
+
+                @if (session('status'))
+                    <div class="text-red">
+                        {{ session('status') }}
+                    </div>
+                @endif
+
                 <div class="flex items-center justify-center">
+
                     <div>
                         <input id="first_operator"
-                               name="first_operator"
-                               type="text" placeholder="First Operator"
-                               value="{{ old('first_operator') }}"
-                               {{--                           class="lg:bg-transparent py-2 lg:py-0 pl-4 focus-within:outline-none">--}}
-                               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-
+                        name="first_operator"
+                        type="text" placeholder="First Operator"
+                        value="{{ old('first_operator') }}"
+                        {{--                           class="lg:bg-transparent py-2 lg:py-0 pl-4 focus-within:outline-none">--}}
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         @error('first_operator')
                         <span class="text-xs text-red-500">{{ $message }}</span>
                         @enderror
@@ -49,15 +56,18 @@
                     </div>
 
                     <div>
+
+
                         <input id="second_operator"
-                               name="second_operator"
-                               type="text" placeholder="Second Operator"
-                               value="{{ old('second_operator') }}"
-                               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        name="second_operator"
+                        type="text" placeholder="Second Operator"
+                        value="{{ old('second_operator') }}"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 
                         @error('second_operator')
-                        <span class="text-xs text-red-500">{{ $message }}</span>
+                        <span class="text-xs text-red-500 mb-2">{{ $message }}</span>
                         @enderror
+
                     </div>
 
                     <button type="submit"
@@ -65,6 +75,10 @@
                         Calculate
                     </button>
                 </div>
+
+                    <div class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        {{ $first_operator.$operation_.$second_operator }} = {{ $result }}
+                    </div>
             </div>
 
     </form>
