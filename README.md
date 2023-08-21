@@ -14,7 +14,6 @@ Allow the user to do basic arithmetic calculations :
 - Users can input numerical values through the interface using a keyboard.
 - Upon selecting an operation, the calculator accurately computes the result
 - The calculator provides immediate feedback in case of invalid inputs or mathematical errors.
-- Users can perform a sequence of calculations without having to reset the calculator each time.
 - The feature is compatible with various devices and screen sizes, ensuring a consistent user experience.
 
 ### Benefit Hypothesis 
