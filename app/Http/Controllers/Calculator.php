@@ -36,9 +36,7 @@ class Calculator extends Controller
 
     public function calculate(){
         $this->calculator_validate();
-//        print request()->input('first_operator');
-//        switch ()
-//        return $result;
+
         switch (request()->input('operation')){
             case '+':
                 return view('/calculator.show', [
